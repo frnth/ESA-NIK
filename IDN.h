@@ -1,7 +1,16 @@
 #ifndef IDN_H
 #define IDN_H
+
+
+
 #include <string>
+#include <vector>
 using namespace std;
+
+
+
+
+
 enum phone_type
 {
     Fax,
@@ -10,6 +19,29 @@ enum phone_type
     Home,
     Main
 };
+
+
+// string phoneTypeToString(int type)
+// {
+//     switch (type)
+//     {
+//     case 4:
+//         return "Main";
+//     case 3:
+//         return "Home";
+//     case 2:
+//         return "Work";
+//     case 1:
+//         return "Office";
+//     case 0:
+//         return "Fax";
+//     default:
+//         return "Unknown";
+//     }
+// }
+
+
+
 class number
 {
 public :
@@ -18,11 +50,11 @@ public :
         num = Num;
         type = Type;
     }
-    string return_num()
+    string return_num() const
     {
         return num;
     }
-    int return_type()
+    int return_type() const
     {
         return type;
     }
@@ -84,7 +116,6 @@ private:
     vector<user> phone_book;
 };
 
-vector<int> remove_index;
 
 /*
 bool check_num(string Num){

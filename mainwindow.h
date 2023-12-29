@@ -20,14 +20,9 @@ public:
 
 private slots:
     void on_Add_Done_pb_clicked();
-
-    void on_pushButton_2_clicked();
-
     void on_Clear_all_pb_clicked();
-
-    void on_pushButton_4_clicked();
-
     void on_add_this_number_pb_clicked();
+    void UpdateNumText();
 
 private:
     vector<number> shomares;

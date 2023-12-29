@@ -4,6 +4,7 @@
 #include <QApplication>
 #include <iostream>
 #include <qdebug.h>
+// #include "globals.h"
 using namespace std;
 int main(int argc, char *argv[])
 {
@@ -28,14 +29,14 @@ vector<user> handle::Search(string search_word)
     for(auto &contact : phone_book){
         if(contact.return_name() == search_word || contact.return_family() == search_word){
             result.push_back(contact);
-            remove_index[index] = count;
+            // remove_index[index] = count;
             index++;
         }else{
             for(auto &Num : contact.return_numbers())
             {
                 if(Num.return_num() == search_word){
                     result.push_back(contact);
-                    remove_index[index] = count;
+                    // remove_index[index] = count;
                     index++;
                 }
             }

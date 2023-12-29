@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "IDN.h"
 #include <vector>
+#include <string>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -48,6 +50,32 @@ void MainWindow::on_add_this_number_pb_clicked()
     phone_type type = static_cast<phone_type> (type_index);
     h_number.set(nuMber.toStdString(), type);
     shomares.push_back(h_number);
+    UpdateNumText();
 
 }
+
+void MainWindow::UpdateNumText() {
+    QString text;
+
+    for (const auto &numberL : shomares) {
+        QString element = QString::fromStdString(numberL.return_num()) + " (" + /*QString::fromStdString(phoneTypeToString((int)numberL.return_type()))*/ "DEFULT"+ ")" + "\n";
+        text.append(element);
+    }
+
+    ui->textEdit->setText(text);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

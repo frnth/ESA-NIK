@@ -59,9 +59,12 @@ private slots:
 
     void on_add_this_number_pb_clicked();
 
+    void on_Exit_pb_clicked();
+
 private:
+    void updateScreen();
     handle note_book;
-    vector<number> shomares:
+    vector<number> shomares;
     Ui::MainWindow *ui;
 };
 

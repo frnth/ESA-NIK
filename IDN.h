@@ -1,16 +1,9 @@
 #ifndef IDN_H
 #define IDN_H
-
-
-
 #include <string>
+#include <regex>
 #include <vector>
 using namespace std;
-
-
-
-
-
 enum phone_type
 {
     Fax,
@@ -19,29 +12,6 @@ enum phone_type
     Home,
     Main
 };
-
-
-// string phoneTypeToString(int type)
-// {
-//     switch (type)
-//     {
-//     case 4:
-//         return "Main";
-//     case 3:
-//         return "Home";
-//     case 2:
-//         return "Work";
-//     case 1:
-//         return "Office";
-//     case 0:
-//         return "Fax";
-//     default:
-//         return "Unknown";
-//     }
-// }
-
-
-
 class number
 {
 public :
@@ -50,11 +20,11 @@ public :
         num = Num;
         type = Type;
     }
-    string return_num() const
+    string return_num()
     {
         return num;
     }
-    int return_type() const
+    int return_type()
     {
         return type;
     }
@@ -116,6 +86,7 @@ private:
     vector<user> phone_book;
 };
 
+//vector<int> remove_index;
 
 /*
 bool check_num(string Num){
@@ -133,8 +104,9 @@ bool check_num(string Num){
     }
 }
 
-bool check_email(string Email){
-
+bool check_email(const string& Email){
+    const regex pattern(R"([a_zA_Z0_9._-] + @[a_zA_Z0_9.-]+\.[a_zA_Z]{2,}");
+    return regex_match(email, pattern);
 }
 */
 #endif // IDN_H

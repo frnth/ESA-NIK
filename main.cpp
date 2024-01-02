@@ -1,10 +1,11 @@
-#include "mainwindow.h"
+/*#include "mainwindow.h"
 #include "IDN.h"
 #include <vector>
 #include <QApplication>
 #include <iostream>
 #include <qdebug.h>
-// #include "globals.h"
+
+
 using namespace std;
 int main(int argc, char *argv[])
 {
@@ -13,8 +14,6 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
-
-
 
 
 void handle::Add(user karbar)
@@ -29,14 +28,14 @@ vector<user> handle::Search(string search_word)
     for(auto &contact : phone_book){
         if(contact.return_name() == search_word || contact.return_family() == search_word){
             result.push_back(contact);
-            // remove_index[index] = count;
+            //remove_index[index] = count;
             index++;
         }else{
             for(auto &Num : contact.return_numbers())
             {
                 if(Num.return_num() == search_word){
                     result.push_back(contact);
-                    // remove_index[index] = count;
+                    //remove_index[index] = count;
                     index++;
                 }
             }
@@ -54,5 +53,16 @@ void handle::Delete(int index){
 void handle::Delete_all(){
     phone_book.clear();
 }
+*/
+#include "mainwindow.h"
 
+#include <QApplication>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
+}
 

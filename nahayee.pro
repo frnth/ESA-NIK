@@ -14,7 +14,6 @@ SOURCES += \
 
 HEADERS += \
     IDN.h \
-    globals.h \
     mainwindow.h
 
 FORMS += \
